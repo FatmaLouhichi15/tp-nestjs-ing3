@@ -8,13 +8,19 @@ export class TravelService {
     return 'This action adds a new travel';
   }
 
-  findAll() {
-    return `This action returns all travel`;
-  }
+private trips = [
+  { id: 1, name: 'To China', price: 9000 },
+  { id: 2, name: 'To Morocco', price: 4000 },
+];
+
+
+ findAll() {
+  return this.trips;
+}
 
   findOne(id: number) {
-    return `This action returns a #${id} travel`;
-  }
+  return this.trips.find(trip => trip.id === id);
+}
 
   update(id: number, updateTravelDto: UpdateTravelDto) {
     return `This action updates a #${id} travel`;
